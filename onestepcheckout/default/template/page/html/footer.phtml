@@ -1,0 +1,97 @@
+    
+ <section id="footer">
+        <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer1')->toHtml(); ?>
+    </section>
+    <section id="footer2">
+      <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('footer2')->toHtml(); ?>
+    </section>
+    <!-- Script to Activate the Carousel -->
+    <script type="text/jscript">
+      jQuery('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+ 
+     </script>
+     <!-- headr navbar -->
+     <script type="text/javascript">
+jQuery(".navbar-toggle-two").click(function(){
+    jQuery(".navbar-toggle-two ul").toggle();
+});
+     </script>
+<!-- jquery for header -->
+    <script type="text/javascript">
+        jQuery(window).on("scroll", function () {
+          if (jQuery(this).scrollTop() > 400) {
+            jQuery(".navbar-fixed-top").addClass("header-hide");
+            jQuery(".header2").addClass("header-fix");
+          }
+          else {
+            jQuery(".navbar-fixed-top").removeClass("header-hide");
+            jQuery(".header2").removeClass("header-fix");
+          }
+        });
+        </script>
+
+     <script type="text/jscript">
+     
+        var flkty = new Flickity( '.main-gallery', {
+  cellAlign: 'left',
+  contain: true,
+  wrapAround: true,
+  prevNextButtons: false,
+  autoPlay: 5000
+});
+     var flkty = new Flickity( '.main-testmonial', {
+  cellAlign: 'left',
+  contain: true,
+  wrapAround: true,
+  prevNextButtons: false,
+  autoPlay: 5000
+});
+ </script>
+ <script type="text/javascript">
+jQuery(document).ready(function() {
+
+  var tab = jQuery('.steps > a'),
+    tabContent = jQuery('.steps-content div'),
+    tabParent = jQuery('.steps-content');
+  
+    if(tab.length){
+    
+      tab.off('click').on('click', function(){
+        
+        var ele = jQuery(this),
+          currContent = jQuery('#'+ele.attr('rel'));
+        
+          if(!ele.hasClass('active')){
+          
+            tabParent.stop(true, true).animate({
+              height:'236px'
+              
+            },function() {
+              tabContent.removeClass('active');
+              currContent.addClass('active');
+              tab.removeClass('active');
+              ele.addClass('active');
+              
+              tabParent.stop(true, true).animate({
+                height:currContent.height()+'px'
+              }); 
+               
+            });
+      
+          }  
+    
+      });
+  
+      jQuery('.steps > a:eq(0)').click();
+  }
+
+});
+ </script>
+<!--<div class="footer-container">
+    <div class="footer">
+        <?php //echo $this->getChildHtml() ?>
+        <address class="copyright"><?php //echo $this->getCopyright() ?></address>
+    </div>
+</div>-->

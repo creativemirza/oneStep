@@ -1,0 +1,49 @@
+
+
+ <nav class="navbar navbar-inverse navbar-fixed-top header-bg" role="navigation">
+            <div class="top-menu">
+                <div class="container">
+                   <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('top-nav')->toHtml(); 
+?>
+                    
+                </div>
+            
+            </div>
+    
+
+        <div class=" navbar navbar-default">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+           <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('navbar')->toHtml(); ?>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+               <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('main-navigation')->toHtml(); 
+?> 
+                
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+        </div>
+    </nav>
+    <div class="navbar navbar-default header2">
+    	<div class="container">
+            
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+               
+                <?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('header2')->toHtml(); ?>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+  
+    </div>
+
+
+      <?php
+         if(Mage::getSingleton('cms/page')->getIdentifier() == 'home'  && Mage::app()->getFrontController()->getRequest()->getRouteName() == 'cms')
+{
+       echo $this->getLayout()->createBlock('cms/block')->setBlockId('header-slider')->toHtml(); 
+}
+?> 
+    

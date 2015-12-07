@@ -1,0 +1,35 @@
+
+<meta http-equiv="Content-Type" content="<?php echo $this->getContentType() ?>" />
+<title><?php echo $this->getTitle() ?></title>
+<meta name="description" content="<?php echo htmlspecialchars($this->getDescription()) ?>" />
+<meta name="keywords" content="<?php echo htmlspecialchars($this->getKeywords()) ?>" />
+<meta name="robots" content="<?php echo htmlspecialchars($this->getRobots()) ?>" />
+<link rel="icon" href="<?php echo $this->getFaviconFile(); ?>" type="image/x-icon" />
+<link rel="shortcut icon" href="<?php echo $this->getFaviconFile(); ?>" type="image/x-icon" />
+
+  <link href="<?php echo $this->getSkinUrl(); ?>css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php  echo $this->getSkinUrl(); ?>css/flickity.min.css" rel="stylesheet">
+<link rel="stylesheet" href="<?php echo $this->getSkinUrl(); ?>font-awesome/css/font-awesome.min.css" type="text/css" />
+    <!-- Custom CSS -->
+   <link href="<?php echo $this->getSkinUrl(); ?>css/style.css" rel="stylesheet">
+     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
+  <!-- jQuery -->
+    <!--<script src="<?php echo $this->getSkinUrl(); ?>js/jquery.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="<?php echo $this->getSkinUrl(); ?>js/flickity.pkgd.min.js"></script>
+     <!-- Bootstrap Core JavaScript -->
+    <script src="<?php echo $this->getSkinUrl(); ?>js/bootstrap.min.js"></script>
+<!--[if lt IE 7]>
+<script type="text/javascript">
+//<![CDATA[
+    var BLANK_URL = '<?php echo $this->helper('core/js')->getJsUrl('blank.html') ?>';
+    var BLANK_IMG = '<?php echo $this->helper('core/js')->getJsUrl('spacer.gif') ?>';
+//]]>
+</script>
+<![endif]-->
+<?php echo $this->getCssJsHtml() ?>
+<?php echo $this->getChildHtml() ?>
+<?php echo $this->helper('core/js')->getTranslatorScript() ?>
+<?php echo $this->getIncludes() ?>
+
+   
